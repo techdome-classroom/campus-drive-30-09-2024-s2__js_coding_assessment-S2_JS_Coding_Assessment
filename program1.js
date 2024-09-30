@@ -3,32 +3,20 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    const bracketMap = {
-        ')': '(',
-        ']': '[',
-        '}': '{'
-    };
-   
-    const stack = [];
-
-    
-    for (let char of s) {
-        
-        if (bracketMap[char]) {
-            
-            const topElement = stack.length > 0 ? stack.pop() : '#';
-           
-            if (topElement !== bracketMap[char]) {
-                return false;
-            }
-        } else {
-           
-            stack.push(char);
+    let stack = [];
+    for (let idx = 0; idx < s.length; idx++) {
+        if (s[idx] == '{') {
+            stack.push('}');
+        } else if (s[idx] == '[') {
+            stack.push(']');
+        } else if (s[idx] == '(') {
+            stack.push(')');
+        }
+        else if (stack.pop() !== s[idx]) {
+            return false;
         }
     }
-
-    
-    return stack.length === 0;
+    return !stack.length;
 };
 
 
