@@ -19,6 +19,7 @@ var isValid = function(s) {
     return !stack.length;
 };
 
+console.log("()")
 
 module.exports = { isValid };
 
