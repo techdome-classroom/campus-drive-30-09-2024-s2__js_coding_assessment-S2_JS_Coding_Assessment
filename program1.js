@@ -18,12 +18,7 @@ var isValid = function(s) {
     }
     return !stack.length;
 };
-
-console.log(isValid("()"));        // Output: true
-console.log(isValid("()[]{}"));    // Output: true
-console.log(isValid("(]"));        // Output: false
-console.log(isValid("([)]"));      // Output: false
-console.log(isValid("{[]}"));  
+ 
 
 module.exports = { isValid };
 
