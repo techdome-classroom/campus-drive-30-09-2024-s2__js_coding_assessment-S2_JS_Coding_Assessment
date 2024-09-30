@@ -30,7 +30,11 @@ var isValid = function(s) {
     
     return stack.length === 0;
 }
-
+console.log(isValid("()"));        // Output: true
+console.log(isValid("()[]{}"));    // Output: true
+console.log(isValid("(]"));        // Output: false
+console.log(isValid("([)]"));      // Output: false
+console.log(isValid("{[]}"));
 
 ;
 
